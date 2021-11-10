@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Nav from "../components/Nav";
-import Pic from "../components/Pic";
-
+import Stack from "../components/Stack";
 
 function About(props) {
   // create state to hold about data
@@ -26,11 +25,21 @@ function About(props) {
     <div>
         <Link to="/"><h1 className='banner'>Hi, I'm Eli, web developer</h1></Link>
         <Nav />
-        <div className="info">
-            <Pic url={about.headshot}/>
+        <div>
+            <div className="pic">
+                <img src={about.headshot} alt="anonymous" />
+                <div className="info">
+                    Name: {about.name} <br />
+                    Email: <a href='mailto:elikyabokanga@gmail.com'>{about.email}</a> <br />
+                    City: {about.location} <br />
+                    Hobbies: {about.hobbies}
+                </div>
+            </div>
             <div className="details">
-                <h3>{about.name}</h3>
                 <p>{about.bio}</p>
+            </div>
+            <div>
+                <Stack tech={about.tech}/>
             </div>
         </div>
     </div>

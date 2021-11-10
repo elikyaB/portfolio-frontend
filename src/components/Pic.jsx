@@ -1,8 +1,11 @@
 import React from "react"
 
 function Pic (props) {
-    var bgImg = {backgroundImage: 'url('+props.url+')'}
-    return (<div style={bgImg}></div>)
+    return (
+        <div className='tech'>
+            <img src={props.src} alt={props.name}/>
+        </div>
+    )
 }
 
 export default Pic

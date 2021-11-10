@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Nav from "../components/Nav";
+import Project from "../components/Project";
 
 function Projects(props) {
   // create state to hold projects
@@ -19,18 +22,13 @@ function Projects(props) {
 
   // define a function that will return the JSX needed once we get the data
   const loaded = () => {
-    return projects.map((project) => (
+    return (
       <div>
-        <h1>{project.name}</h1>
-        <img src={project.image} />
-        <a href={project.git}>
-          <button>Github</button>
-        </a>
-        <a href={project.live}>
-          <button>live site</button>
-        </a>
+        <Link to="/"><h1 className='banner'>Hi, I'm Eli, web developer</h1></Link>
+        <Nav />
+        <Project projects={projects}/>
       </div>
-    ));
+    );
   };
 
   return projects ? loaded() : <h1>Loading...</h1>;

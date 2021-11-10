@@ -1,5 +1,4 @@
 import Nav from "../components/Nav";
-import { Link } from "react-router-dom";
 
 
 function Home(props) {
