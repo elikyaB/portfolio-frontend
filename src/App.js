@@ -1,7 +1,7 @@
 import "./App.css";
 
 // IMPORT COMPONENTS
-import Header from "./components/Header";
+import Header from "./components/Nav";
 import Footer from "./components/Footer";
 import { Route, Routes } from "react-router-dom";
 
@@ -10,13 +10,13 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 
+
 function App() {
   // URL should have YOUR HEROKU URL for your backend, make sure you include the trailing slash
   const URL = "https://elikya-portfolio.herokuapp.com/";
 
   return (
     <div className="App">
-      <Header />
       <Routes>
         <Route exact path="/" element={<Home/>}/>
         <Route exact path="/projects" element={<Projects URL={URL}/>}/>

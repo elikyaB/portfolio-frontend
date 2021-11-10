@@ -1,4 +1,8 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Nav from "../components/Nav";
+import Pic from "../components/Pic";
+
 
 function About(props) {
   // create state to hold about data
@@ -20,9 +24,15 @@ function About(props) {
   // define a function that will return the JSX needed once we get the data
   const loaded = () => (
     <div>
-      <h2>{about.name}</h2>
-      <h3>{about.email}</h3>
-      <p>{about.bio}</p>
+        <Link to="/"><h1 className='banner'>Hi, I'm Eli, web developer</h1></Link>
+        <Nav />
+        <div className="info">
+            <Pic url={about.headshot}/>
+            <div className="details">
+                <h3>{about.name}</h3>
+                <p>{about.bio}</p>
+            </div>
+        </div>
     </div>
   );
 
